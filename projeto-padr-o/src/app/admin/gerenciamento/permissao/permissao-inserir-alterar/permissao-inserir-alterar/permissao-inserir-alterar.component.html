@@ -1,0 +1,49 @@
+<div class="main-content">
+    <div fxFlex="97">
+        <div class="card">
+            <div class="card-header">
+                <div *ngIf="tipoComponente == false; else editar" class="tipo_form_header">
+                    <h5 style="font-size: 17px;" class="tipo_form">Cadastrar permissão</h5>
+                </div>
+                <ng-template #editar>
+                    <div class="tipo_form_header">
+                        <h5 style="font-size: 17px;" class="tipo_form">Editar permissão</h5>
+                    </div>
+                </ng-template>
+            </div>
+            <form [formGroup]="formPermicao" (ngSubmit)="salvar()" novalidate (keydown.enter)="$event.preventDefault()">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-6">
+                            <mat-form-field class="full-width">
+                                <mat-label style="font-size: 15px">Nome *</mat-label>
+                                <input matInput placeholder="Placeholder" formControlName="name"
+                                       [errorStateMatcher]="matcher">
+                                <mat-error *ngIf="formPermicao.controls['name'].hasError('required')">
+                                    Campo Obrigatório.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-lg-6">
+                            <mat-form-field class="full-width">
+                                <mat-label style="font-size: 15px">Descrição *</mat-label>
+                                <input matInput placeholder="Placeholder" formControlName="description"
+                                       [errorStateMatcher]="matcher">
+                                <mat-error *ngIf="formPermicao.controls['description'].hasError('required')">
+                                    Campo Obrigatório.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="button-row">
+                        <button class="btn btn-outline-primary">Cancelar</button>
+                        <button class="btn btn-outline-success" type="submit" [disabled]="!formPermicao.valid">Salvar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card card-user">
+        <div class="image">
+        </div>
+        <div class="card-body">
+          <div class="author">
+            <a href="javascript:void(0)">
+              <img class="avatar border-gray" [src]="perfil" alt="Foto perfil usuário">
+              <h5 class="title">Nome usuário</h5>
+            </a>
+            <p class="description">
+              Descrição (se tiver)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Editar Perfil</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label for="nif">CPF/CNPJ</label>
+                  <input type="text" id="nif" class="form-control" disabled="" placeholder="CPF/CNPJ" value="000-000-000-00">
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label for="tipo_usuario">Tipo</label>
+                  <input id="tipo_usuario" type="text" class="form-control" placeholder="Tipo usuário" value="BackOffice" disabled="">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input type="email" id="email" class="form-control" value="dix@dixbpo.com" placeholder="Email">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input type="text" id="nome" class="form-control" placeholder="Nome" value="DIXBPO">
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label for="telefone">Telefone</label>
+                  <input type="text" id="telefone" class="form-control" placeholder="Telefone" value="(63) 3245-5445">
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row" style="margin: 0 auto; display: table">
+              <button class="btn btn-success btn-fab btn-round">
+                 Enviar <i class="fa fa-paper-plane" style="padding: 0 4px;"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

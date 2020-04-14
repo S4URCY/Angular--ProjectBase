@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div class="card">
+        <div style="padding: 0 20px; width: 100%" fxLayout="row" fxLayoutGap="10px">
+            <div fxFlex="88" fxFlex.gt-lg="97" fxFlex.gt-md="89" class="pt-3">
+                <mat-form-field appearance="standard">
+                    <mat-label>Buscar</mat-label>
+                    <input matInput (keyup)="applyFilter($event.target.value)">
+                </mat-form-field>
+            </div>
+            <div fxFlex="12" fxFlex.gt-lg="7" fxFlex.gt-md="11" class="pt-3">
+                <button type="button" class="btn btn-primary" (click)="novo()">Novo <i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="dataSource.data.length > 0">
+            <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%">ID</th>
+                    <td mat-cell *matCellDef="let row">  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="descricao">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header width="20%">Descrição</th>
+                    <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="nome">
+                    <th mat-header-cell *matHeaderCellDef width="10%">Nome</th>
+                    <td mat-cell *matCellDef="let row">  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="guard_name">
+                    <th mat-header-cell *matHeaderCellDef width="10%">Guard name</th>
+                    <td mat-cell *matCellDef="let row">  </td>
+                </ng-container>
+
+                <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+                    <ng-container matColumnDef="acoes">
+                        <th mat-header-cell *matHeaderCellDef width="6%">Ações</th>
+                        <td mat-cell *matCellDef="let row">
+                            <div class="button-row">
+                                <button mat-icon-button aria-label="editar">
+                                    <i class="fa fa-edit" id="edit"></i>
+                                </button>
+                                <button mat-icon-button aria-label="editar" >
+                                    <i class="fa fa-trash" id="excluir"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </ng-container>
+                </div>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                </tr>
+            </mat-table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+        <div *ngIf="dataSource.data.length === 0" style="padding-top: 20px" class="text-center">
+            <div class="alert alert-light" role="alert" style="color: black">
+                Nenhum registro encontrado.
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+  <div class="container">
+    <div class="navbar-wrapper">
+      <div class="navbar-toggle" (click)="sidebarToggle()">
+        <button type="button" class="navbar-toggler">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <a class="navbar-brand" routerLinkActive="active" [routerLink]="['/admin']">DIXBPO</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a routerLinkActive="active" [routerLink]="['/publico/login']"  class="nav-link">
+            <i class="nc-icon nc-tap-01"></i> Login
+          </a>
+        </li>
+        <li class="nav-item  active ">
+          <a routerLinkActive="active" [routerLink]="['/publico/lock']" class="nav-link">
+            <i class="nc-icon nc-key-25"></i> Esqueci minha senha.
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper wrapper-full-page ">
+  <div class="full-page section-image" filter-color="black" data-image="./assets/img/bg/fabio-mangione.jpg">
+    <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+    <div class="content">
+      <div class="container">
+        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+          <form [formGroup]="loginForm" class="form" (ngSubmit)="login()">
+            <div class="card card-login">
+              <div class="card-header ">
+                <div class="card-header ">
+                  <h3 class="header text-center">Login</h3>
+                </div>
+              </div>
+              <div class="card-body ">
+                <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="nc-icon nc-email-85"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" formControlName="username" placeholder="E-mail" (focus)="focus=true" (blur)="focus=false">
+                </div>
+                <div class="input-group"  [ngClass]="{'input-group-focus':focus1===true}">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="nc-icon nc-key-25"></i>
+                    </span>
+                  </div>
+                  <input type="password" placeholder="Senha" formControlName="password" class="form-control" (focus)="focus1=true" (blur)="focus1=false">
+                </div>
+                <br/>
+              </div>
+              <div class="card-footer ">
+                <button  class="btn btn-warning btn-round btn-block mb-3" type="submit" >Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="footer footer-black  footer-white ">
+      <div class="container">
+        <div class="row">
+          <nav class="footer-nav">
+            <ul>
+              <li>
+                <a href="http://dixbpo.com/" target="_blank">DIXBPO</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="credits ml-auto">
+            <span class="copyright">
+              &copy; {{test | date: 'yyyy'}},  feito com <i class="fa fa-heart heart"></i> por DIXBPO
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

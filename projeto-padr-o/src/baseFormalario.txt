@@ -1,0 +1,66 @@
+<div class="main-content">
+    <div fxFlex="97">
+        <div class="card">
+            <div class="card-header">
+                <div *ngIf="tipoComponente == false; else editar" class="tipo_form_header">
+                    <h5 style="font-size: 17px;" class="tipo_form">Cadastrar usuário</h5>
+                </div>
+                <ng-template #editar>
+                    <div class="tipo_form_header">
+                        <h5 style="font-size: 17px;" class="tipo_form">Editar usuário</h5>
+                    </div>
+                </ng-template>
+            </div>
+            <form [formGroup]="formPermicao" (ngSubmit)="salvar()" novalidate (keydown.enter)="$event.preventDefault()">
+                <div class="card-body">
+
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+.tipo_form {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin: 0 0 5px;
+}
+.tipo_form_header {
+    display: inline-table;
+}
+.tipo_form::after {
+    content: '';
+    position: relative;
+    height: 3px;
+    display: block;
+    clear: both;
+    background-color: #a9d773;
+}
+
+.button-row button {
+    margin-right: 8px;
+}
+.card-footer {
+    margin: 0 auto;
+    display: table;
+}
+
+.full-width {
+    width: 100%;
+}
+mat-form-field.mat-form-field {
+    font-size: 12px;
+}
+.mat-error {
+    font-size: 1.25em;
+}
+
+div#card_form {
+    margin: 0 20px;
+}

@@ -1,0 +1,75 @@
+
+<div class="logo">
+
+	<a  class="simple-text logo-normal">
+		Logo Empresa
+	</a>
+</div>
+
+
+<div class="sidebar-wrapper">
+
+  <div class="user">
+    <div class="photo">
+      <img [src]="perfil" />
+    </div>
+    <div class="info">
+      <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+        <span>
+         Nome usuário
+          <b class="caret"></b>
+        </span>
+      </a>
+      <div class="clearfix"></div>
+      <div class="collapse" id="collapseExample">
+        <ul class="nav">
+          <li>
+            <a routerLink="/admin/gerenciamento/usuario/perfil">
+                <span class="sidebar-mini-icon"><i class="nc-icon nc-single-02"></i></span>
+              <span class="sidebar-normal">Perfil</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="sidebar-mini-icon"><i class="nc-icon nc-key-25"></i></span>
+              <span class="sidebar-normal">Alterar senha</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span class="sidebar-mini-icon"><i class="nc-icon nc-button-power"></i></span>
+              <span class="sidebar-normal">Sair</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuitem of menuItems">
+                <!--If is a single link-->
+                <a [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'">
+                    <i class="{{menuitem.icontype}}"></i>
+                    <p>{{menuitem.title}}</p>
+                </a>
+                <!--If it have a submenu-->
+                <a data-toggle="collapse" href="#{{menuitem.collapse}}" *ngIf="menuitem.type === 'sub'">
+                    <i class="{{menuitem.icontype}}"></i>
+                    <p>{{menuitem.title}}<b class="caret"></b></p>
+                </a>
+
+                <!--Display the submenu items-->
+                <div id="{{menuitem.collapse}}" class="collapse" *ngIf="menuitem.type === 'sub'">
+                    <ul class="nav">
+                        <li routerLinkActive="active" *ngFor="let childitem of menuitem.children">
+                            <a [routerLink]="[menuitem.path + childitem.path]">
+                                <span class="sidebar-mini-icon">{{childitem.ab}}</span>
+                                <span class="sidebar-normal">{{childitem.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+</div>

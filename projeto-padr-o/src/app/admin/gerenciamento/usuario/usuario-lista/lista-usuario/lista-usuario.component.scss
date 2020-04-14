@@ -1,0 +1,49 @@
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+th.mat-sort-header.mat-header-cell {
+    padding-top: 20px;
+}
+
+.mat-elevation-z8 {
+    margin: 20px;
+}
+.lista-null {
+    display: none;
+}
+
+.lista-ativo {
+    display: inline-block;
+}
+
+i#edit {
+    color: green;
+    font-size: 1.5em;
+}
+
+i#excluir {
+    color: #ff2020;
+    font-size: 1.5em;
+}
+
+.cabecalho-modal {
+    display: flex;
+    text-align: center !important;
+    margin: 0 auto;
+}
+
+.button-action {
+    display: table;
+    margin: 5px auto;
+}
+
+
+mat-form-field.mat-form-field {
+    font-size: 12px;
+}
