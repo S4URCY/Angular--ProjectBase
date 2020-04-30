@@ -33,7 +33,7 @@
     "@rxweb/reactive-form-validators": "^1.9.9-beta1",
     "bootstrap": "4.4.1",
     "core-js": "3.6.4",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "ngx-mask": "^8.1.7",
     "nouislider": "14.1.1",
     "perfect-scrollbar": "1.5.0",
